@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import SearchForm from "./SearchForm";
+import FilterForm from "./FilterForm";
 import ResultList from "./ResultList";
 import API from "../utils/API";
 
-class SearchResultContainer extends Component {
+class DirectoryContainer extends Component {
   state = {
-    search: "",
+    filter: "",
     results: []
   };
 
   // When this component mounts, pull random user list
   componentDidMount() {
-    this.getUsers();
+    this.getUsers(10);
   }
 
   getUsers = (numUsers) => {
@@ -28,18 +28,11 @@ class SearchResultContainer extends Component {
     });
   };
 
-  // When the form is submitted, search the Giphy API for `this.state.search`
-  handleFormSubmit = event => {
-    event.preventDefault();
-    this.getUsers(this.state.search);
-  };
-
   render() {
     return (
       <div>
-        <SearchForm
-          search={this.state.search}
-          handleFormSubmit={this.handleFormSubmit}
+        <FilterForm
+          filter={this.state.filter}
           handleInputChange={this.handleInputChange}
         />
         {console.log(this.state.results)}
@@ -48,4 +41,4 @@ class SearchResultContainer extends Component {
   }
 }
 
-export default SearchResultContainer;
+export default DirectoryContainer;

@@ -1,21 +1,21 @@
 import React from "react";
 
-function SearchForm(props) {
+function FilterForm(props) {
   return (
     <form>
       <div className="form-group">
         <input
           onChange={props.handleInputChange}
-          value={props.search}
-          name="search"
+          value={props.filter}
+          name="filter"
           type="text"
           className="form-control"
           placeholder="Filter"
-          id="search"
+          id="filter"
         />
       </div>
     </form>
   );
 }
 
-export default SearchForm;
+export default FilterForm;
