@@ -31,17 +31,23 @@ class DirectoryContainer extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand navbar-light bg-light">
-        <div className="navbar-collapse row" id="navbarNav">
-          <div className="searchbox">
-            <FilterForm
-              filter={this.state.filter}
-              handleInputChange={this.handleInputChange}
-            />
-            {console.log(this.state.results)}
-          </div>
+      <div>
+        <div class="header">
+          <h1>Employee Directory</h1>
+          <p>Click on carrots to filter by heading or use the search box to narrow your results.</p>
         </div>
-      </nav>
+        <nav className="navbar navbar-expand navbar-light bg-light">
+          <div className="navbar-collapse row" id="navbarNav">
+            <div className="searchbox">
+              <FilterForm
+                filter={this.state.filter}
+                handleInputChange={this.handleInputChange}
+              />
+              {console.log(this.state.results)}
+            </div>
+          </div>
+        </nav>
+      </div>
     );
   }
 }
