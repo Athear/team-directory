@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import FilterForm from "./FilterForm";
 import ResultList from "./ResultList";
 import API from "../utils/API";
+import "../styles/Directory.css"
 
 class DirectoryContainer extends Component {
   state = {
@@ -30,13 +31,17 @@ class DirectoryContainer extends Component {
 
   render() {
     return (
-      <div>
-        <FilterForm
-          filter={this.state.filter}
-          handleInputChange={this.handleInputChange}
-        />
-        {console.log(this.state.results)}
-      </div>
+      <nav className="navbar navbar-expand navbar-light bg-light">
+        <div className="navbar-collapse row" id="navbarNav">
+          <div className="searchbox">
+            <FilterForm
+              filter={this.state.filter}
+              handleInputChange={this.handleInputChange}
+            />
+            {console.log(this.state.results)}
+          </div>
+        </div>
+      </nav>
     );
   }
 }
