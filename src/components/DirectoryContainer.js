@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import FilterForm from "./FilterForm";
-import ResultList from "./ResultList";
+import UserList from "./UserList";
 import API from "../utils/API";
 import "../styles/Directory.css"
 
@@ -47,6 +47,7 @@ class DirectoryContainer extends Component {
             </div>
           </div>
         </nav>
+        <UserList users={this.state.results} />
       </div>
     );
   }
