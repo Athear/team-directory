@@ -43,7 +43,6 @@ class DirectoryContainer extends Component {
                 filter={this.state.filter}
                 handleInputChange={this.handleInputChange}
               />
-              {console.log(this.state.results)}
             </div>
           </div>
         </nav>
