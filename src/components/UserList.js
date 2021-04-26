@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useReducer } from "react";
 import objectSort from "../utils/objectSort"
 
 function UserList(props) {
@@ -30,7 +30,29 @@ function UserList(props) {
           </th>
         </tr>
       </thead>
-
+      <tbody>
+      {allUsers.map(user=>{
+        return(
+        <tr key={user.login.uuid}>
+          <td>
+            <img src={user.picture.thumbnail} />
+          </td>
+          <td>
+            {`${user.name.first} ${user.name.last}`}
+          </td>
+          <td>
+            {user.phone}
+          </td>
+          <td>
+            {user.email}
+          </td>
+          <td>
+            {user.dob.date}
+          </td>
+        </tr>
+        )
+      })}
+      </tbody>
     </table>
   );
 }
