@@ -16,7 +16,7 @@ function UserList(props) {
           <th>
             Image
           </th>
-          <th onClick={() =>handleClick("name.first")}>
+          <th onClick={() =>handleClick("firstName")}>
             Name
           </th>
           <th onClick={() =>handleClick("phone")}>
@@ -25,7 +25,7 @@ function UserList(props) {
           <th>
             Email
           </th>
-          <th onClick={() =>handleClick("dob.age")}>
+          <th onClick={() =>handleClick("age")}>
             DOB
           </th>
         </tr>
@@ -33,12 +33,12 @@ function UserList(props) {
       <tbody>
       {allUsers.map(user=>{
         return(
-        <tr key={user.login.uuid}>
+        <tr key={user.uuid}>
           <td>
-            <img src={user.picture.thumbnail} />
+            <img src={user.thumbnail} />
           </td>
           <td>
-            {`${user.name.first} ${user.name.last}`}
+            {`${user.firstName} ${user.lastName}`}
           </td>
           <td>
             {user.phone}
@@ -47,7 +47,7 @@ function UserList(props) {
             {user.email}
           </td>
           <td>
-            {user.dob.date}
+            {user.dob}
           </td>
         </tr>
         )

@@ -17,7 +17,20 @@ class DirectoryContainer extends Component {
 
   getUsers = (numUsers) => {
     API.search(numUsers)
-      .then(res => this.setState({ results: res.data.results }))
+      .then(res => this.setState({ results: res.data.results.map((user)=>{
+        return(
+          {
+            uuid:user.login.uuid,
+            firstName: user.name.first,
+            lastName: user.name.last,
+            phone: user.phone,
+            email: user.email,
+            dob: user.dob.date,
+            age: user.dob.age, //only used for sorting. May not need.
+            thumbnail : user.picture.thumbnail
+          }
+        )
+      })}))
       .catch(err => console.log(err));
   };
 
