@@ -59,7 +59,7 @@ class DirectoryContainer extends Component {
             </div>
           </div>
         </nav>
-        <UserList users={this.state.results} />
+        <UserList users={this.state.results.filter(user=>{return `${user.firstName} ${user.lastName}`.toLowerCase().includes(this.state.filter.toLowerCase())})} />
       </div>
     );
   }
