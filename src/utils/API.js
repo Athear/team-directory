@@ -4,7 +4,7 @@ const BASEURL = "https://randomuser.me/api/";
 
 const apiCall =  {
   search: function(numUsers) {
-    const OPTIONS = { params: { results:numUsers } }
+    const OPTIONS = { params: { results:numUsers, inc:"name,email,login,dob,phone,picture" } }
     return axios.get(BASEURL,OPTIONS);
   }
 }
