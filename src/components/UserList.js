@@ -1,5 +1,4 @@
 import React, { useReducer } from "react";
-import objectSort from "../utils/objectSort"
 import useSortableData from "../utils/useSortableData"
 
 function UserList(props) {
