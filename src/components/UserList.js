@@ -1,11 +1,14 @@
 import React, { useReducer } from "react";
 import objectSort from "../utils/objectSort"
+import useSortableData from "../utils/useSortableData"
 
 function UserList(props) {
-  const allUsers = props.users
+  const {items:allUsers,requestSort} =useSortableData(props.users)
+
+  
 
   const handleClick = (column) =>{
-    allUsers.sort(objectSort(column))
+    requestSort(column)
     console.log(allUsers);
   }
 
