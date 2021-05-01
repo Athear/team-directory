@@ -42,6 +42,18 @@ class DirectoryContainer extends Component {
     });
   };
 
+  handleFilter = (obj) =>{
+    const objValues = Object.values(obj)
+    let doesContain=false;
+    objValues.forEach((currentString)=>{
+      if(!currentString.toLowerCase().includes(this.state.filter.toLowerCase()) && !doesContain){
+        doesContain=false;
+      }else{
+        doesContain=true;
+      }
+    })
+  }
+
   render() {
     return (
       <div>
