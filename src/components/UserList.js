@@ -1,5 +1,6 @@
 import React, { useReducer } from "react";
 import useSortableData from "../utils/useSortableData"
+import "../styles/UserList.css"
 
 function UserList(props) {
   const {items:allUsers,requestSort} =useSortableData(props.users)
