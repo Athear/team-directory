@@ -25,8 +25,8 @@ class DirectoryContainer extends Component {
             lastName: user.name.last,
             phone: user.phone,
             email: user.email,
-            dob: user.dob.date,
-            age: user.dob.age, //only used for sorting. May not need.
+            dob: new Date(user.dob.date).toLocaleDateString(),
+            age: user.dob.age,
             thumbnail : user.picture.thumbnail
           }
         )
@@ -59,7 +59,7 @@ class DirectoryContainer extends Component {
       <div>
         <div className="header">
           <h1>Employee Directory</h1>
-          <p>Click on carrots to filter by heading or use the search box to narrow your results.</p>
+          <p>Click on a header to sort or use the search box to narrow your results.</p>
         </div>
         <nav className="navbar navbar-expand navbar-light bg-light">
           <div className="navbar-collapse row" id="navbarNav">
