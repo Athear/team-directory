@@ -46,12 +46,13 @@ class DirectoryContainer extends Component {
     const objValues = Object.values(obj)
     let doesContain=false;
     objValues.forEach((currentString)=>{
-      if(!currentString.toLowerCase().includes(this.state.filter.toLowerCase()) && !doesContain){
+      if(!(doesContain || currentString.toString().toLowerCase().includes(this.state.filter.toLowerCase()))){
         doesContain=false;
       }else{
         doesContain=true;
       }
     })
+    return doesContain;
   }
 
   render() {
@@ -71,7 +72,7 @@ class DirectoryContainer extends Component {
             </div>
           </div>
         </nav>
-        <UserList users={this.state.results.filter(user=>{return `${user.firstName} ${user.lastName}`.toLowerCase().includes(this.state.filter.toLowerCase())})} />
+        <UserList users={this.state.results.filter(user=>{return this.handleFilter(user)})} />
       </div>
     );
   }
