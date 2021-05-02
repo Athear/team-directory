@@ -36,7 +36,7 @@ function UserList(props) {
       <tbody>
       {allUsers.map(user=>{
         return(
-        <tr key={user.uuid}>
+        <tr key={user.uuid} class="user-row">
           <td>
             <img src={user.thumbnail} />
           </td>
