@@ -27,7 +27,7 @@ class DirectoryContainer extends Component {
             email: user.email,
             dob: new Date(user.dob.date).toLocaleDateString(),
             age: user.dob.age,
-            thumbnail : user.picture.thumbnail
+            thumbnail : user.picture.medium
           }
         )
       })}))
